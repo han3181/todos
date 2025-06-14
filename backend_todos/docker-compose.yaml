@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql_container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root   # Ganti sesuai kebutuhan
+      MYSQL_DATABASE: todos     # Database default
+      MYSQL_USER: user                       # User baru
+      MYSQL_PASSWORD: user       # Password user baru
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    restart: always
+    depends_on:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: root
+      PMA_PASSWORD: rootpassword123
+    ports:
+      - "8080:80"
+
+volumes:
+  mysql_data:
+
