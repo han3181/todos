@@ -10,7 +10,7 @@ Aplikasi Todo List ini terdiri dari dua bagian utama:
 
 ## 🎥 Demo Aplikasi
 
-[![Tonton Demo](https://han3181.github.io/todos/index.html)
+🔗 [Buka Demo Aplikasi](https://han3181.github.io/todos/demo/)
 
 > Klik gambar di atas untuk melihat demo aplikasi Todo List!
 
