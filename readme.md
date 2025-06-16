@@ -1,6 +1,4 @@
-HAHA iya iya, maaf Bagas 😅 auto markdown-nya kepencet tadi. Nih gue kasih ulang versi **polosan** tanpa markdown, tinggal copy langsung buat README:
 
----
 
 # Aplikasi Todo List - Flutter + Laravel + Riverpod
 
