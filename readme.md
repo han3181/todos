@@ -1,13 +1,22 @@
 
+# ✅ Aplikasi Todo List - Flutter + Laravel + Riverpod
 
-# Aplikasi Todo List - Flutter + Laravel + Riverpod
+Aplikasi Todo List ini terdiri dari dua bagian utama:
 
-Aplikasi Todo List ini terdiri dari dua bagian:
+- 📱 `todos_mobile` → Aplikasi mobile dengan Flutter
+- 🖥️ `backend_todos` → REST API menggunakan Laravel dan MySQL
 
-- todos_mobile → Aplikasi mobile menggunakan Flutter
-- backend_todos → Backend REST API menggunakan Laravel dan MySQL
+---
 
-Fitur Utama (Aplikasi Mobile):
+## 🎥 Demo Aplikasi
+
+[![Tonton Demo](https://han3181.github.io/todos/)
+
+> Klik gambar di atas untuk melihat demo aplikasi Todo List!
+
+---
+
+## 🚀 Fitur Utama (Mobile)
 
 - Tambah, edit, dan hapus todo
 - Tandai todo sebagai selesai
@@ -15,139 +24,113 @@ Fitur Utama (Aplikasi Mobile):
 - Kategori dan tanggal jatuh tempo
 - Validasi form input
 - Warna dan UI dinamis tergantung status
-- Disambungkan dengan REST API Laravel
+- Terhubung ke backend Laravel via REST API
 
 ---
 
-### Framework dan Teknologi yang Digunakan:
+## 🛠️ Teknologi yang Digunakan
 
-Backend (backend_todos):
-
+### Backend (`backend_todos`)
 - Laravel
 - MySQL
 
-Frontend (todos_mobile):
-
+### Frontend (`todos_mobile`)
 - Flutter
-- Riverpod (State Management)
-- intl (format tanggal)
-- Dio atau http (untuk komunikasi REST API)
+- Riverpod (state management)
+- `intl` (format tanggal)
+- `dio` atau `http` (untuk API)
 
 ---
 
-Cara Menjalankan Proyek
+## ⚙️ Cara Menjalankan Proyek
 
-1. Setup Backend (Laravel):
-
-- Masuk ke folder backend_todos:
+### 1. Setup Backend (Laravel)
 
 ```bash
-  cd backend_todos
-```
+cd backend_todos
+composer install
+cp .env.example .env
+php artisan key:generate
+````
 
-- Install dependency:
-
-```bash
-  composer install
-```
-
-- Copy dan edit environment file:
-
-```bash
-  cp .env.example .env
-  php artisan key\:generate
-```
-
-- Atur koneksi database di .env:
+Edit `.env` dan sesuaikan koneksi DB:
 
 ```env
-  DB\_DATABASE=todos\_db
-  DB\_USERNAME=root
-  DB\_PASSWORD=your\_password
+DB_DATABASE=todos_db
+DB_USERNAME=root
+DB_PASSWORD=your_password
 ```
 
-- Jalankan migrasi:
+Lanjut migrasi dan jalankan server:
 
 ```bash
-  php artisan migrate
+php artisan migrate
+php artisan serve
 ```
 
-- Jalankan server Laravel:
+API akan tersedia di: [http://127.0.0.1:8000/api](http://127.0.0.1:8000/api)
+
+---
+
+### 2. Setup Frontend (Flutter)
 
 ```bash
-  php artisan serve
+cd todos_mobile
+flutter pub get
 ```
 
-Akses API akan tersedia di: [http://127.0.0.1:8000/api](http://127.0.0.1:8000/api)
-
-2. Setup Frontend (Flutter):
-
-- Masuk ke folder todos_mobile:
-
-```bash
-  cd todos_mobile
-```
-
-- Install dependency:
-
-```bash
-  flutter pub get
-```
-
-- Pastikan base URL API di dalam kode sudah benar, misalnya:
+Edit base URL di Flutter, misalnya:
 
 ```dart
-  final baseUrl = "[http://127.0.0.1:8000/api](http://127.0.0.1:8000/api)";
+final baseUrl = "http://192.168.1.100:8000/api"; // Ganti IP sesuai dengan IP lokal PC
 ```
 
-Catatan: Kalau pakai emulator Android fisik, ganti 127.0.0.1 ke IP lokal PC seperti 192.168.1.100
-
-- Jalankan aplikasi Flutter:
+Jalankan aplikasi:
 
 ```bash
-  flutter run
+flutter run
 ```
 
 ---
 
-#### truktur Folder (Singkat)
+## 📁 Struktur Folder (Singkat)
 
-todos_mobile:
+### `todos_mobile`
 
-- lib/model → Model TodoItem
-- lib/provider → Provider dengan Riverpod
-- lib/ui/page → Halaman utama
-- lib/ui/widget → Widget form todo
-- main.dart → Entry point aplikasi
+* `lib/model` → Model TodoItem
+* `lib/provider` → Riverpod provider
+* `lib/ui/page` → Halaman utama
+* `lib/ui/widget` → Widget form todo
+* `main.dart` → Entry point
 
-backend_todos (Laravel):
+### `backend_todos`
 
-- app/
-- routes/api.php → route API Laravel
-- database/migrations → struktur tabel todo
-- .env → konfigurasi database
-
----
-
-#### Dependency Penting
-
-Flutter:
-
-- flutter_riverpod
-- intl
-- dio (atau http)
-
-Laravel:
-
-- laravel/framework
-- mysql
+* `app/`
+* `routes/api.php` → Routing API Laravel
+* `database/migrations/` → Struktur tabel
+* `.env` → Konfigurasi DB
 
 ---
 
-#### Tentang Developer:
+## 📦 Dependency Penting
 
-Nama: Raihan Arifin Budi
+### Flutter:
 
-No. Absen: 25
+* `flutter_riverpod`
+* `intl`
+* `dio` atau `http`
+
+### Laravel:
+
+* `laravel/framework`
+* `mysql`
 
 ---
+
+## 👤 Tentang Developer
+
+* Nama: Raihan Arifin Budi
+* No. Absen: 25
+
+---
+
